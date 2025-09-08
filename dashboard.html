@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Finance — Dashboard</title>
+  <link href="styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="page-dashboard">
+  <header class="topbar">
+    <div class="brand">MiniFinance</div>
+    <div class="top-actions">
+      <label class="toggle">
+        <input id="darkToggle" type="checkbox" />
+        <span>Dark</span>
+      </label>
+      <button id="btnExportCSV" class="btn small">Export CSV</button>
+      <input id="importCSV" type="file" accept=".csv" />
+      <button id="btnLogout" class="btn small danger">Logout</button>
+    </div>
+  </header>
+
+  <div class="container grid">
+    <aside class="sidebar card">
+      <h3>Hello, <span id="userName"></span></h3>
+      <div class="quick-stats">
+        <div>Total Balance <div id="totalBalance">₹0</div></div>
+        <div>Income <div id="totalIncome">₹0</div></div>
+        <div>Expense <div id="totalExpense">₹0</div></div>
+      </div>
+
+      <div class="nav">
+        <button class="nav-btn active" data-page="add">Add Txn</button>
+        <button class="nav-btn" data-page="transactions">Transactions</button>
+        <button class="nav-btn" data-page="reports">Reports</button>
+        <button class="nav-btn" data-page="goals">Savings Goals</button>
+      </div>
+    </aside>
+
+    <main class="main card" id="mainArea">
+      <!-- Add Transaction -->
+      <section class="page" id="page-add">
+        <h2>Add Transaction</h2>
+        <div class="form-row">
+          <select id="txnType"><option value="expense">Expense</option><option value="income">Income</option></select>
+          <input id="txnAmount" type="number" placeholder="Amount" />
+          <input id="txnDate" type="date" />
+        </div>
+        <div class="form-row">
+          <input id="txnDesc" placeholder="Description (optional)" />
+          <select id="txnCategory">
+            <option value="">Select category</option>
+            <option>Food</option><option>Travel</option><option>Bills</option><option>Shopping</option><option>Salary</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <button id="btnAddTxn" class="btn primary">Add Transaction</button>
+          <button id="btnClearDummy" class="btn small">Add Sample Data</button>
+        </div>
+      </section>
+
+      <!-- Transactions list -->
+      <section class="page hidden" id="page-transactions">
+        <h2>Transactions</h2>
+        <div class="table-wrap">
+          <table id="txnTable">
+            <thead><tr><th>Date</th><th>Type</th><th>Category</th><th>Description</th><th>Amount</th><th></th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Reports -->
+      <section class="page hidden" id="page-reports">
+        <h2>Reports</h2>
+        <div class="charts">
+          <div class="chart-card card">
+            <h4>Monthly Trend</h4>
+            <canvas id="lineChart" height="140"></canvas>
+          </div>
+          <div class="chart-card card">
+            <h4>Category Distribution</h4>
+            <canvas id="pieChart" height="180"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Goals -->
+      <section class="page hidden" id="page-goals">
+        <h2>Savings Goals</h2>
+        <div class="form-row">
+          <input id="goalName" placeholder="Goal (e.g., Laptop)" />
+          <input id="goalAmount" type="number" placeholder="Target Amount" />
+          <button id="btnAddGoal" class="btn">Add Goal</button>
+        </div>
+        <div id="goalsList"></div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer muted">MiniFinance • Demo — client-side only</footer>
+
+  <script src="utils.js"></script>
+  <script src="charts.js"></script>
+  <script src="import-export.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

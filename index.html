@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Finance — Login</title>
+  <link href="styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-auth">
+  <main class="auth-container card">
+    <h1 class="brand">MiniFinance</h1>
+
+    <div class="auth-forms">
+      <div class="form-box" id="loginBox">
+        <h2>Sign in</h2>
+        <input id="loginEmail" placeholder="Email" type="email" />
+        <input id="loginPass" placeholder="Password" type="password" />
+        <button id="btnLogin" class="btn">Sign in</button>
+        <p class="muted">New? <a href="#" id="showRegister">Create an account</a></p>
+      </div>
+
+      <div class="form-box hidden" id="registerBox">
+        <h2>Create account</h2>
+        <input id="regName" placeholder="Full name" />
+        <input id="regEmail" placeholder="Email" type="email" />
+        <input id="regPass" placeholder="Password" type="password" />
+        <button id="btnRegister" class="btn primary">Register</button>
+        <p class="muted">Have an account? <a href="#" id="showLogin">Sign in</a></p>
+      </div>
+    </div>
+
+    <p class="small muted">This demo uses client-side auth for instant running. For production, connect a secure backend.</p>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>
