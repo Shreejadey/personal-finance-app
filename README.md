@@ -21,11 +21,17 @@ Built with *HTML, CSS, JavaScript, Bootstrap, and **LocalStorage*.
 ### Sign-up Page
 ![Sign-up Page](screenshots/sign.png)
 
+### Set-up Page
+![Set-up Page](screenshots/setup.png)
+
 ### Light Mode Dashboard
-![Light Mode Dashboard](screenshots/lightmode-dashboard.png)
+![Light Mode Dashboard](screenshots/lightmode%20dashboard.png)
 
 ### Dark Mode Transactions List
-![Dark Mode Transactions](screenshots/darkmode-transactions-list.png)
+![Dark Mode Transactions](screenshots/darkmode%20transactions%20lists.png)
+
+### Reports and charts
+![Reports and charts](screenshots/reports%20and%20charts.png)
 
 ---
 
