@@ -12,7 +12,7 @@ Built with *HTML, CSS, JavaScript, Bootstrap, and **LocalStorage*.
 - Add Income & Expenses  
 - Transactions List  
 - Reports & Charts  
-- Export Data to CSV/Excel  
+- Export Data to CSV/Excel 
 
 ---
 
